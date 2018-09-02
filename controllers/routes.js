@@ -1,3 +1,4 @@
+import path from 'path';
 
 class Routes {
   static homePage(request, response) {
@@ -8,9 +9,10 @@ class Routes {
   }
 
   static sync(request, response) {
-    request.send('index.html');
+    const filePath = path.join(__dirname, '/../../public/index.html');
+    console.log('file path is ', filePath);
+    response.sendFile(filePath);
   }
 }
-
 
 export default Routes;
