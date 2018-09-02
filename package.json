@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build": "babel server.js controllers -d bin"
+    "start": "npm run build && node bin/server.js",
+    "build": "babel server.js controllers/routes.js -d bin"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "morgan": "^1.9.0",
     "nodemon": "^1.18.4"
   }
 }
